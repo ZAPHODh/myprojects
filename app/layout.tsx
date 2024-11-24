@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Portifólio",
-    template: "%s | Next.js Portfolio Starter",
+    template: "%s ",
   },
   description: "Meu portifólio.",
   openGraph: {
     title: "Meu portifólio",
     description: "Conheça meus projetos.",
     url: baseUrl,
-    siteName: "Portifólio",
-    locale: "pt_BR",
+    siteName: "Por",
+    locale: "pt_br",
     type: "website",
   },
   robots: {
@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="pt-BR"
+      lang="pt-br"
       className={cx(
         "text-black bg-white dark:text-white dark:bg-black",
         GeistSans.variable,
