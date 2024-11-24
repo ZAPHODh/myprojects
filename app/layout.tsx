@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   },
   description: "Meu portifólio.",
   openGraph: {
-    title: "My Portfolio",
-    description: "This is my portfolio.",
+    title: "Meu portifólio",
+    description: "Conheça meus projetos.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "Portifólio",
     locale: "pt_BR",
     type: "website",
   },
