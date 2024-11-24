@@ -77,7 +77,7 @@ export function formatDate(date: string, includeRelative = false) {
   }
 
   let fullDate = targetDate.toLocaleString("pt-br", {
-    month: "long",
+    month: "short",
     day: "numeric",
     year: "numeric",
   });
