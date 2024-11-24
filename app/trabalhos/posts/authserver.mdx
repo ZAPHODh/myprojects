@@ -1,0 +1,49 @@
+---
+title: "API REST de Login"
+publishedAt: "2024-11-24"
+summary: "API RESTful construída com Node.js e TypeScript para autenticação e gerenciamento de usuários, seguindo boas práticas de segurança e escalabilidade."
+---
+
+A API oferece uma solução robusta e segura para autenticação de usuários, utilizando boas práticas de segurança e estruturada com Node.js e TypeScript. Este repositório foi desenvolvido para permitir o gerenciamento de login, com um foco em facilitar a integração e o uso em sistemas de backend modernos.
+
+## Principais Tecnologias e Boas Práticas
+
+A API utiliza tecnologias como:
+
+- **Node.js** e **Express** para criar o servidor.
+- **JWT (JSON Web Token)** para autenticação segura.
+- **TypeScript** para garantir maior segurança no desenvolvimento.
+
+## Como Funciona
+
+A API oferece endpoints para registrar, autenticar e gerenciar usuários de forma simples e segura. O fluxo de autenticação é baseado em JWT, onde os tokens gerados são usados para autenticação em endpoints privados.
+
+## Exemplo de uma das rotas
+
+```typescript
+import express from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import { User } from "./models/User";
+
+const app = express();
+app.use(express.json());
+
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await User.findOne({ username });
+
+  if (user && bcrypt.compareSync(password, user.password)) {
+    const token = jwt.sign({ id: user._id }, "secret_key");
+    res.json({ token });
+  } else {
+    res.status(400).json({ message: "Invalid credentials" });
+  }
+});
+```
+
+## Conclusão
+
+Esta API proporciona uma base segura e eficiente para autenticação de usuários, sendo essencial para projetos que buscam garantir a proteção de dados e a integridade do sistema.
+
+[Acesse o repositório no GitHub](https://github.com/ZAPHODh/authserver)
