@@ -1,6 +1,6 @@
 import { getBlogPosts } from "app/trabalhos/utils";
 
-export const baseUrl = "https://projects-bice-iota.vercel.app/";
+export const baseUrl = "https://projects-bice-iota.vercel.app";
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
