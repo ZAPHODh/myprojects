@@ -7,6 +7,9 @@ const navItems = {
   "/trabalhos": {
     name: "trabalhos",
   },
+  "/stacks": {
+    name: "tecnologias",
+  },
 };
 
 export function Navbar() {
