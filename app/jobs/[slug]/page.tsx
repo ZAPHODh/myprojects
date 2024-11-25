@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
-import { formatDate, getBlogPosts } from "app/trabalhos/utils";
+import { formatDate, getBlogPosts } from "app/jobs/utils";
 import { baseUrl } from "app/sitemap";
 
 export async function generateStaticParams() {
@@ -35,7 +35,7 @@ export function generateMetadata({ params }) {
       description,
       type: "article",
       publishedTime,
-      url: `${baseUrl}/trabalhos/${post.slug}`,
+      url: `${baseUrl}/jobs/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -74,7 +74,7 @@ export default function Blog({ params }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/trabalhos/${post.slug}`,
+            url: `${baseUrl}/jobs/${post.slug}`,
             author: {
               "@type": "Person",
               name: "My Portfolio",
