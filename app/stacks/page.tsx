@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
-        Técnologias que domino
+        Tecnologias que domino
       </h1>
       <Stacks />
     </section>
